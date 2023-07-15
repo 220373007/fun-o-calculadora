@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Calculadora</title>
+<style>
+body {
+  font-family: sans-serif;
+}
+
+.entrada {
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.resultado {
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.operacao {
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+
+<input type="text" class="entrada" placeholder="Número 1">
+<input type="text" class="entrada" placeholder="Número 2">
+<select class="operacao">
+  <option value="1">Soma</option>
+  <option value="2">Subtração</option>
+  <option value="3">Multiplicação</option>
+  <option value="4">Divisão</option>
+</select>
+<input type="button" value="Calcular" onclick="calcular()">
+<div class="resultado"></div>
+
+<script>
+function calcular() {
+  var numero1 = document.querySelector(".entrada").value;
+  var numero2 = document.querySelector(".entrada").value;
+  var operacao = document.querySelector(".operacao").value;
+
+  switch (operacao) {
+    case "1":
+      resultado = numero1 + numero2;
+      break;
+    case "2":
+      resultado = numero1 - numero2;
+      break;
+    case "3":
+      resultado = numero1 * numero2;
+      break;
+    case "4":
+      resultado = numero1 / numero2;
+      break;
+    default:
+      resultado = 0;
+  }
+
+  document.querySelector(".resultado").innerHTML = resultado;
+}
+</script>
+
+</body>
+</html>
